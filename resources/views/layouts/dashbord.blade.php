@@ -28,15 +28,12 @@
     <header class="navbar">
         <div class="container-flHuid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
-            <a class="navbar-brand" href="#">
-                <img  src="{{asset('assets/img/whitelogo.png')}}" alt="logo">
+            <a class="navbar-brand" href="#" style="background-color: #fff ;width:200px">
+                <img class="" src="{{asset('assets/img/logo2.png')}}" alt="logo">
             </a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
-                </li>
-                <li class="nav-item p-x-1">
-                    <a class="nav-link">الرئيسية</a>
                 </li>
             </ul>
 
@@ -52,9 +49,10 @@
                 <li class="nav-title">إدارة النظام</li>
                     <li class="nav-item">
                     <a class="nav-link" href=""><i class="fa fa-group"></i>  ادارة المستخدمين </a>
-                    <a class="nav-link" href=""><i class="fa fa-newspaper-o"></i> ادارة البرامج</a>
-                    <a class="nav-link" href="#"><i class="fa fa-comments"></i>ادارة المتدربين</a>
-                    <a class="nav-link" href=""><i class="fa fa-calendar"></i> إدارة الاختبارات </a>
+                    <a class="nav-link" href=""><i class="fa fa-newspaper-o"></i> ادارة الفروع</a>
+                    <a class="nav-link" href="#"><i class="fa fa-comments"></i>رفع تحصيلات</a>
+                    <a class="nav-link" href=""><i class="fa-regular fa-file-word"></i> تنزيل ملف الدورة </a>
+                    <a class="nav-link" href=""><i class="fa-regular fa-file"></i> رفع كشف حساب </a>
                 </li>
 
                 <li class="nav-title">

@@ -23,6 +23,7 @@ html {
     --black-color:#13168F;
     --gold-color:#00394f;
     --white-color:#fff;
+    --bank-color:#13168F;
 }
 body {
   margin: 0; }
@@ -5408,8 +5409,6 @@ body:not(.top-nav) .sidebar {
         body:not(.top-nav) .sidebar ul.nav li.nav-item a.nav-link.active {
           color: var(--white-color);
           background: var(--black-color); }
-          body:not(.top-nav) .sidebar ul.nav li.nav-item a.nav-link.active i {
-            color: #20a8d8; }
         body:not(.top-nav) .sidebar ul.nav li.nav-item a.nav-link [class^="icon-"], body:not(.top-nav) .sidebar ul.nav li.nav-item a.nav-link [class*=" icon-"] {
           display: inline-block;
           margin-top: -4px;
@@ -7838,4 +7837,23 @@ base-chart.chart {
     .signInUser{
         display: none;
     }
+}
+.bankText{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: var(--bank-color);
+    width: 400px;
+    font-size: 20px;
+    text-align: center;
+}
+.main-dashbord{
+    height: 400px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
