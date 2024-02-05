@@ -23,10 +23,10 @@
     <header class="navbar">
         <div class="container-flHuid d-flex justify-center">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
-            <a class="navbar-brand" href="#">
-                <img  src="{{asset('assets/img/whitelogo.png')}}" alt="logo">
+            <a class="navbar-brand" href="{{Route('admin')}}" style="background-color:#fff">
+                <img  src="{{asset('assets/img/logo2.png')}}" alt="logo">
             </a>
-            <ul class="nav navbar-nav hidden-md-down">
+            {{-- <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item p-x-1">
                     <a class="nav-link" href="{{Route('admin')}}">
                         <i class="fa-solid fa-arrow-right margin-0 backToDashbord">
@@ -36,11 +36,7 @@
                 <li class="nav-item p-x-1">
                     <a class="nav-link" href="{{Route('index')}}">الرئيسية</a>
                 </li>
-            </ul>
-            <div class="mx-3 signInUser">
-                <i class="fa fa-user"></i>
-                {{-- <span>{{Auth::user()->name}}</span> --}}
-            </div>
+            </ul> --}}
         </div>
     </header>
     @yield('content')

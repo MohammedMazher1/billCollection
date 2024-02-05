@@ -1974,7 +1974,7 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: var(--gold-color);
+  background-color: var(--bank-color);
   padding: 8px 15px;
   margin-bottom: 10px;
  }
@@ -2950,7 +2950,8 @@ input[type="button"].btn-block {
   padding: 20px;
   padding: 1.25rem;
   background-color: #e4e5e6;
-  border: 1px solid #cfd8dc;
+  border: 1px solid var(--bank-color);
+  border-top-color:transparent;
   color: var(--gold-color);
   margin-bottom: 60px;
 }
@@ -3191,8 +3192,8 @@ input[type="button"].btn-block {
     z-index: 2;
     color: var(--white-color);
     cursor: default;
-    background-color: var(--gold-color);
-    border-color: var(--gold-color); }
+    background-color: var(--bank-color);
+    border-color: var(--bank-color); }
   .page-item.disabled .page-link, .pagination-datatables li.disabled .page-link, .pagination li.disabled .page-link, .page-item.disabled .pagination-datatables li a, .pagination-datatables li .page-item.disabled a, .pagination-datatables li.disabled a, .page-item.disabled .pagination li a, .pagination li .page-item.disabled a, .pagination li.disabled a, .page-item.disabled .page-link:focus, .pagination-datatables li.disabled .page-link:focus, .pagination li.disabled .page-link:focus, .page-item.disabled .pagination-datatables li a:focus, .pagination-datatables li .page-item.disabled a:focus, .pagination-datatables li.disabled a:focus, .page-item.disabled .pagination li a:focus, .pagination li .page-item.disabled a:focus, .pagination li.disabled a:focus, .page-item.disabled .page-link:hover, .pagination-datatables li.disabled .page-link:hover, .pagination li.disabled .page-link:hover, .page-item.disabled .pagination-datatables li a:hover, .pagination-datatables li .page-item.disabled a:hover, .pagination-datatables li.disabled a:hover, .page-item.disabled .pagination li a:hover, .pagination li .page-item.disabled a:hover, .pagination li.disabled a:hover {
     color: #b0bec5;
     pointer-events: none;

@@ -39,11 +39,11 @@
                         الرئسية
                     </a>
                     <a href="#about-us" class="nav-item nav-link">
-                        <i class="fa-regular fa-address-card"></i>
+                        <i class="fa-solid fa-download"></i>
                           تنزيل المحصلة
                     </a>
                     <a href="#services" class="nav-item nav-link">
-                        <i class="fa-solid fa-gears"></i>
+                        <i class="fa-solid fa-upload"></i>
                         رفع ملف الدورة
                     </a>
                     <a href="#footer" class="nav-item nav-link">
@@ -56,11 +56,11 @@
                 @else
                     @if (Auth::user()->type == 'admin')
                         <a href="{{ Route('admin') }}" class="btn btn-primary px-5 ml-2 ">الإدارة</a>
-                    @endif --}}
+                    @endif
                     <div class="mx-3 text-primary">
-                        {{-- @isset($user)
+                        @isset($user)
 
-            @endisset --}}
+            @endisset
                         <i class="fa fa-user"></i>
                         <span>{{ Auth::user()->name }}</span>
                     </div>
@@ -69,7 +69,7 @@
                             onclick="document.getElementById('logout').submit();">تسجيل الخروج</a>
                         @csrf
                     </form>
-                @endguest
+                @endguest --}}
             </div>
         </nav>
     </div>
@@ -81,87 +81,6 @@
     <!-- end main -->
     <!-- Footer Start -->
     <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5" id="footer">
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5 d-flex justify-content-center align-item-start flex-column">
-                <a href="" class="text-right">
-                    <img src="{{ asset('/assets/img/whitelogo.png') }}" class="w-75" alt="logo">
-                </a>
-                <p class="text-right">
-                    عناويننا على مواقع التواصل لا تتردد في التواصل معنا والاستفسار سيتم الرد على استفساراتكم خلال 24
-                    ساعة
-                </p>
-                <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-primary border rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-primary border rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-primary border rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-primary border rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5 text-center">
-                <h3 class=" btn-outline-primary mb-4">نتواجد</h3>
-                <div class="d-flex justify-content-center">
-                    <h4 class="fa fa-map-marker-alt btn-outline-primary"></h4>
-                    <div class="pl-3">
-                        <h5 class="btn-outline-primary text-white">العنوان</h5>
-                        <p>المكلا - الشرج</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <h4 class="fa fa-envelope btn-outline-primary"></h4>
-                    <div class="pl-3">
-                        <h5 class="text-white d-inline-block">الأيميل</h5>
-                        <p>mo@gmail.com</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <h4 class="fa fa-phone-alt btn-outline-primary"></h4>
-                    <div class="pl-3">
-                        <h5 class="text-white">الهاتف</h5>
-                        <p>+97 776533887</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5 d-flex flex-column justify-content-center">
-                <h3 class="btn-outline-primary mb-4 text-center">روابط سريعة</h3>
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                    <a class="d-flex text-whit justify-content-between pb-2 w-75" href="#">
-                        الرئسية
-                        <i class="fa fa-angle-right mr-2"></i>
-                    </a>
-                    <a class="d-flex text-white justify-content-between pb-2 w-75" href="#">
-                        من نحن ؟
-                        <i class="fa fa-angle-right mr-2"></i>
-                    </a>
-                    <a class="d-flex text-white justify-content-between pb-2 w-75" href="#">البرامج
-                        <i class="fa fa-angle-right mr-2"></i>
-                    </a>
-                    <a class="d-flex text-white justify-content-between pb-2 w-75" href="#">الخدمات
-                        <i class="fa fa-angle-right mr-2"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="btn-outline-primary mb-4 text-center">ارسل لنا</h3>
-                <form action="">
-                    <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="اسمك "
-                            required="required" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="الايميل "
-                            required="required" />
-                    </div>
-                    <div>
-                        <button class="btn btn-primary border btn-block py-3" type="submit">
-                            ارسال
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
         <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;">
             <p class="m-0 text-center text-white">
                 &copy;

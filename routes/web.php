@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminControllerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,6 @@ Route::get('/', function () {
 Route::get('admin', function () {
     return view('admin.dashbord');
 });
+Route::get('admin',[AdminController::class,'index'])->name('admin');
+Route::resource('users',UserController::class);
+

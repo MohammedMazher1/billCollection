@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('file_name');
             $table->string('type');
-            $table->string('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('casecade');
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('download_status');
             $table->timestamps();
         });
