@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
-            $table->primary('id');
-            $table->string('name');
-            $table->string('user_name');
-            $table->string('password');
+        Schema::create('files', function (Blueprint $table) {
+            $table->id();
+            $table->string('file_name');
             $table->string('type');
+            $table->string('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('casecade');
+            $table->boolean('download_status');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('files');
     }
 };
