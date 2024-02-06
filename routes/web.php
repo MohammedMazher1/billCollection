@@ -29,3 +29,7 @@ Route::get('file',[AdminController::class,'checkIfFolderExsist'])->name('file');
 Route::resource('users',UserController::class);
 Route::resource('collection',CollectionController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,6 +4,11 @@
     <form method="POST"  action="{{Route('collection.store')}}" enctype="multipart/form-data">
         @csrf
     <div class="card" style="margin-right: 25%;margin-top: 10%;">
+        @if (Session::get('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{Session::get('error')}}
+                </div>
+         @endif
         <div class="form-group">
             <label for="file">ملف التحصيلات</label>
             <input type="file" required class="form-control" name="file" id="file">

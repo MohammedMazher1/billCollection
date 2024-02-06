@@ -12,13 +12,13 @@ class AdminController extends Controller
     }
 
     public function checkIfFolderExsist(){
-
-        // return public_path();
-        $file = 'mohammed';
-        if(Storage::disk('local')->exists($file)){
-            return 'yes';
-        }else{
-            return 'no';
-        }
+        $date = date('Y-m-d');
+        return $date;
+        // $file = 'file.txt';
+        // if(Storage::disk('public')->exists($file)){
+        //     return 'yes';
+        // }else{
+        //     return 'no';
+        // }
     }
 }
