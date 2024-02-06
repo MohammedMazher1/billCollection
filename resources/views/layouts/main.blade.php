@@ -38,7 +38,7 @@
                         <i class="fa fa-home"></i>
                         الرئسية
                     </a>
-                    <a href="#about-us" class="nav-item nav-link">
+                    <a href="{{route('files.index')}}" class="nav-item nav-link">
                         <i class="fa-solid fa-download"></i>
                           تنزيل المحصلة
                     </a>
@@ -51,7 +51,7 @@
                         تواصل معنا
                     </a>
                 </div>
-                {{-- @guest
+                @guest
                     <a href="{{ Route('login') }}" class="btn btn-primary px-4 ">تسجيل الدخول</a>
                 @else
                     @if (Auth::user()->type == 'admin')
@@ -60,7 +60,7 @@
                     <div class="mx-3 text-primary">
                         @isset($user)
 
-            @endisset
+                 @endisset
                         <i class="fa fa-user"></i>
                         <span>{{ Auth::user()->name }}</span>
                     </div>
@@ -69,7 +69,7 @@
                             onclick="document.getElementById('logout').submit();">تسجيل الخروج</a>
                         @csrf
                     </form>
-                @endguest --}}
+                @endguest
             </div>
         </nav>
     </div>

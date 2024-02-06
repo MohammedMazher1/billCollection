@@ -58,12 +58,12 @@
                 <li class="nav-title">
                     الخصوصية الأمان
                 </li>
-                {{-- <li class="nav-item">
+                <li class="nav-item" >
                     <form id="logout" action="{{route('logout') }}" method="POST">
                         @csrf
-                    <a class="nav-link" onclick="document.getElementById('logout').submit();"><i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج </a>
+                    <a style="cursor: pointer" class="nav-link" onclick="document.getElementById('logout').submit();"><i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج </a>
                     </form>
-                </li> --}}
+                </li>
 
             </ul>
         </nav>

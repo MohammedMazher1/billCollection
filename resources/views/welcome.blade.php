@@ -9,7 +9,7 @@
             Bin Dowal Islamic Microfinance Bank
         </p>
     </div>
-    <a href="#">
+    <a href="{{ Route('login') }}">
         <div class="start">
             إبداء
         </div>

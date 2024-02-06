@@ -8,9 +8,9 @@
     <div class="LoginCard shadow borderd p-5 mx-auto my-5 text-right text-primary" style="width: 350px">
             <p>اسم المستخدم</p>
             <div class="input-group ">
-                <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                 <i class="fa fa-user" style="position: absolute;left: 10px;top: 50%;transform: translateY(-50%)"></i>
-                @error('email')
+                @error('username')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
