@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminControllerController;
+use App\Http\Controllers\CollectionController;
+use Illuminate\Database\Eloquent\Collection;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +25,7 @@ Route::get('admin', function () {
     return view('admin.dashbord');
 });
 Route::get('admin',[AdminController::class,'index'])->name('admin');
+Route::get('file',[AdminController::class,'checkIfFolderExsist'])->name('file');
 Route::resource('users',UserController::class);
+Route::resource('collection',CollectionController::class);
 

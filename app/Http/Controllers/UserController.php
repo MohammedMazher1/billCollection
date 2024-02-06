@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(6);
+        $users = User::paginate(3);
 
         return view("user.index", compact("users"));
     }
@@ -85,6 +85,8 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route("users.index");
     }
 }

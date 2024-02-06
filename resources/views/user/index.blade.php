@@ -4,7 +4,7 @@
     <div class="row">
 
         <div class="col-lg-12">
-            <div class="card" style="margin-top: 10%">
+            <div class="card" style="margin-top: 8%">
                 <a href="{{Route('users.create')}}" class="createUser btn btn-primary" ><i class="fa fa-user-plus"></i> اضافه</a>
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> قائمة المستخدمين
