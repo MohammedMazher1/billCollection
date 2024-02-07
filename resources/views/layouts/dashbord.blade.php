@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}">
-    <link href="./output.css" rel="stylesheet">
-     <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
     <!-- Main styles for this application -->
 </head>
 
@@ -51,7 +50,7 @@
                     <a class="nav-link" href="{{route('users.index')}}"><i class="fa fa-group"></i>  ادارة المستخدمين </a>
                     <a class="nav-link" href=""><i class="fa fa-newspaper-o"></i> ادارة الفروع</a>
                     <a class="nav-link" href="{{route('collection.create')}}"><i class="fa fa-comments"></i>رفع تحصيلات</a>
-                    <a class="nav-link" href=""><i class="fa-regular fa-file-word"></i> تنزيل ملف الدورة </a>
+                    <a class="nav-link" href="{{route('admin.cycleFile')}}"><i class="fa-regular fa-file-word"></i> تنزيل ملف الدورة </a>
                     <a class="nav-link" href=""><i class="fa-regular fa-file"></i> رفع كشف حساب </a>
                 </li>
 

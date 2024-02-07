@@ -53,7 +53,13 @@
     <script src="{{asset('/assets/js/pace.min.js')}}"></script>
     <script src="{{asset('/assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
-
+    <script>
+        $('#refresh').on('click', function() {
+            setTimeout(function() {
+                window.location.reload();
+            },800)
+        });
+    </script>
 </body>
 
 </html>
