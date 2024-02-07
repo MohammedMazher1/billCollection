@@ -9,6 +9,7 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,8 @@ Route::get('admin', function () {
 Route::get('file',[AdminController::class,'checkIfFolderExsist'])->name('file');
 Route::resource('users',UserController::class);
 Route::resource('collection',CollectionController::class);
-Route::resource('files',FileController::class);
+
+// Route::resource('download{id}',[FileController::class ,'download']);
 
 
 Auth::routes();
@@ -37,4 +39,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('admin')->group(function () {
 
     Route::get('admin',[AdminController::class,'index'])->name('admin');
+});
+
+Route::middleware('customer')->group(function () {
+    Route::resource('files',FileController::class);
 });

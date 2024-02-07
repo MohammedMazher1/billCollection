@@ -10129,3 +10129,9 @@ ul.options-list li:hover > .fa-xmark{
     padding: 10px 50px;
     border-radius: 10px;
  }
+ .dashbordButton{
+    background: transparent;
+    color: blue;
+    border: none;
+    font-size: 16px;
+}

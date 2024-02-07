@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>billCollection</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" href="{{asset('/assets/img/logo2.png')}}">
 
     <!-- Flaticon Font -->
     <link href="{{ asset('/assets/lib/flaticon/font/flaticon.css') }}" rel="stylesheet" />
@@ -100,7 +101,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('assets/lib/jquery-3.7.1.js') }}"></script>
-    <script src="{{ asset('assets/js/tester.js') }}"></script>
     <script src="{{ asset('/assets/lib/easing/easing.min.js') }}"></script>
     <script src="{{ asset('/assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('/assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
@@ -109,6 +109,13 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script>
+        $('#refresh').on('click', function() {
+            setTimeout(function() {
+                window.location.reload();
+            },200)
+        });
+    </script>
 </body>
 
 </html>
