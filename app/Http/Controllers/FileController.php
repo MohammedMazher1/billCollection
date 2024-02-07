@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
-use App\Http\Requests\StoreFileRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateFileRequest;
 use Illuminate\Support\Facades\Auth;
+use Exception;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -26,15 +27,52 @@ class FileController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        return view('files.createCycleFile', compact('user'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreFileRequest $request)
+    public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $year = date('Y');
+        $month = date('m');
+        if(!Storage::exists('public/cycleFiles/'.$user->name)){
+            Storage::makeDirectory('public/cycleFiles/'.$user->name);
+        }
+        if(!Storage::exists('public/cycleFiles/'.$user->name.'/'.$year)){
+            Storage::makeDirectory('public/cycleFiles/'.$user->name.'/'.$year);
+        }
+        if(!Storage::exists('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month)){
+            Storage::makeDirectory('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month);
+        }
+        try{
+            $file = $request->file('file');
+            $date = date('Y-m-d');
+            $fileName = date('Y-m-d' , strtotime($date . '-1 day'));
+            if(Storage::exists('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.)){
+                return redirect()->back()->with('error', 'الملف موجود مسبقا');
+            }
+            $file->storeAs('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.'.txt');
+        }catch(Exception $e){
+            return redirect()->back()->with('error', 'لم يتم تخزين الملف');
+        }
+        try{
+            $file = array(
+                'file_name' => $fileName.'.txt',
+                'user_id' => $user->id,
+                'type' => 'cycleFiles',
+                'download_status' => false,
+
+            );
+            File::create($file);
+
+        }catch(Exception $e){
+            return redirect()->back()->with('error', ' لم يتم تخزين الملف في قاعدة البيانات');
+        }
+        return redirect()->route('home');
     }
 
     /**

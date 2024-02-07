@@ -22,11 +22,11 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/',[HomeController::class,'index'])->name('home');
+// Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('admin', function () {
     return view('admin.dashbord');
 });
-Route::get('file',[AdminController::class,'checkIfFolderExsist'])->name('file');
+// Route::get('file',[AdminController::class,'checkIfFolderExsist'])->name('file');
 Route::resource('users',UserController::class);
 Route::resource('collection',CollectionController::class);
 
@@ -35,9 +35,8 @@ Route::resource('collection',CollectionController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('admin')->group(function () {
-
     Route::get('admin',[AdminController::class,'index'])->name('admin');
 });
 

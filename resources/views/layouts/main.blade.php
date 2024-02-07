@@ -43,7 +43,7 @@
                         <i class="fa-solid fa-download"></i>
                           تنزيل المحصلة
                     </a>
-                    <a href="#services" class="nav-item nav-link">
+                    <a href="{{route('files.create')}}" class="nav-item nav-link">
                         <i class="fa-solid fa-upload"></i>
                         رفع ملف الدورة
                     </a>
