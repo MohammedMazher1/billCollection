@@ -18,7 +18,9 @@ class FileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $files = File::where('user_id', $user->id)->where('download_status' , '0')->orderBy('created_at', 'desc')->get();
+        $files = File::where('user_id', $user->id)
+        ->where('type','collection')
+        ->where('download_status' , '0')->orderBy('created_at', 'desc')->get();
         return view('files.index', compact('files'));
     }
 
@@ -52,16 +54,16 @@ class FileController extends Controller
             $file = $request->file('file');
             $date = date('Y-m-d');
             $fileName = date('Y-m-d' , strtotime($date . '-1 day'));
-            if(Storage::exists('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.)){
+            if(Storage::exists('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.'.'.$request->file('file')->extension())){
                 return redirect()->back()->with('error', 'الملف موجود مسبقا');
             }
-            $file->storeAs('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.'.txt');
+            $file->storeAs('public/cycleFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.'.'.$request->file('file')->extension());
         }catch(Exception $e){
             return redirect()->back()->with('error', 'لم يتم تخزين الملف');
         }
         try{
             $file = array(
-                'file_name' => $fileName.'.txt',
+                'file_name' => $fileName.'.'.$request->file('file')->extension(),
                 'user_id' => $user->id,
                 'type' => 'cycleFiles',
                 'download_status' => false,

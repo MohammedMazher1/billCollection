@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\File;
 class AdminController extends Controller
 {
     public function index(){
@@ -20,5 +21,13 @@ class AdminController extends Controller
         // }else{
         //     return 'no';
         // }
+    }
+
+    public function cycleFiles(){
+        $files = File::where('type','cycleFiles')
+        ->where('download_status' , '0')->orderBy('created_at', 'desc')->get();
+
+        return view('admin.cycleFiles', compact('files'));
+
     }
 }
