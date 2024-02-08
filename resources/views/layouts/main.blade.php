@@ -119,6 +119,15 @@
                 window.location.reload();
             },200)
         });
+
+        $('.nav-item').on('click', function() {
+            if (!$(this).hasClass('active')) {
+                $(this).addClass('active');
+            }
+        });
+        // $('nav-item').each(function() {
+
+        // });
     </script>
 </body>
 

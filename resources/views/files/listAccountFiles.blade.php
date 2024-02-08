@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
-<div>
-    <div class="row">
+<div style="height: calc(100vh - 365px)">
+    <div >
 
         <div class="col-lg-12">
             <div class="card" style="margin-top: 5% ;width: 90%; margin-left: auto;margin-right: auto;text-align: center">
@@ -37,7 +37,36 @@
                             @endforeach
                         </tbody>
                     </table>
-
+                    <div class="pagination" style="display: flex; justify-content:space-between;align-items:center">
+                        <ul class="pagination justify-content-center">
+                            @if ($files->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">&laquo;</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $files->previousPageUrl() }}" rel="prev"><i class="fa-solid fa-chevron-right"></i></a>
+                                </li>
+                            @endif
+                            @foreach ($files->getUrlRange(1, $files->lastPage()) as $page => $url)
+                                <li class="page-item {{ $page == $files->currentPage() ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                </li>
+                            @endforeach
+                            @if ($files->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $files->nextPageUrl() }}" rel="next">&raquo;</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link"><i class="fa-solid fa-chevron-left"></i></span>
+                                </li>
+                            @endif
+                        </ul>
+                        <div class="pagination-label">
+                            الصفحة {{ $files->currentPage() }} من {{ $files->lastPage() }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

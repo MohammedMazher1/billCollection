@@ -23,19 +23,20 @@ use Illuminate\Support\Facades\Storage;
 */
 
 // Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('admin', function () {
-    return view('admin.dashbord');
-});
+// Route::get('admin', function () {
+//     return view('admin.dashbord');
+// });
 // Route::get('file',[AdminController::class,'checkIfFolderExsist'])->name('file');
-Route::resource('users',UserController::class);
-Route::resource('collection',CollectionController::class);
 
+Route::middleware('spuerAdmin')->group(function () {
+    Route::resource('users',UserController::class);
+});
 // Route::resource('download{id}',[FileController::class ,'download']);
 
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware('admin')->group(function () {
     Route::get('admin',[AdminController::class,'index'])->name('admin');
     Route::get('admin.cycleFile',[AdminController::class,'cycleFiles'])->name('admin.cycleFile');
@@ -44,6 +45,7 @@ Route::middleware('admin')->group(function () {
     Route::post('admin.store',[AdminController::class,'store'])->name('admin.store');
 
 });
+Route::resource('collection',CollectionController::class);
 
 Route::middleware('customer')->group(function () {
     Route::resource('files',FileController::class);

@@ -14,7 +14,7 @@
                 </div>
                 @endif
                 <div class="form-group">
-                    <label for="company">اسم  الفرع</label>
+                    <label for="company">اسم  المستخدم</label>
                     <input type="text" required class="form-control" name="name" id="name" placeholder="اسم المستخدم">
                 </div>
 
@@ -27,7 +27,7 @@
 
                     <div class="form-group col-sm-6" style="padding: 0">
                         <label for="city">اسم المستخدم</label>
-                        <input type="text" class="form-control" required name="user_name" id="city" placeholder="Mo123">
+                        <input type="text" class="form-control" required name="username" id="city" placeholder="Mo123">
                     </div>
 
                     <div class="form-group col-sm-5" style="padding: 0 ;">
@@ -36,7 +36,16 @@
 
                     </div>
                 <!--/row-->
-
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5" style="margin: 0;">
+                        <label for="postal-code">نوع المستخدم</label>
+                        <select name="type" class="form-control">
+                            <option value="customer">فرع</option>
+                            <option value="admin">مدير نظام</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                    </div>
                 </div>
                 <div class="row" style="margin: 0">
                    <div class="card-footer" style="text-align: left; padding-left:0">

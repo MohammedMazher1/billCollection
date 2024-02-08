@@ -20,7 +20,7 @@ class FileController extends Controller
         $user = Auth::user();
         $files = File::where('user_id', $user->id)
         ->where('type','collection')
-        ->where('download_status' , '0')->orderBy('created_at', 'desc')->get();
+        ->where('download_status' , '0')->orderBy('created_at', 'desc')->paginate(4);
         return view('files.index', compact('files'));
     }
 

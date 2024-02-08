@@ -7853,3 +7853,10 @@ base-chart.chart {
     flex-direction: column;
 
 }
+.dashbordButton{
+    background: transparent;
+    color: blue;
+    border: none;
+    font-size: 16px;
+}
+

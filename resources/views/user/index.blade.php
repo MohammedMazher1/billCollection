@@ -33,10 +33,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{-- <div class="userPagination">
-                        {{ $users->links() }}
-                    </div> --}}
-
                     <div class="pagination" style="display: flex; justify-content:space-between;align-items:center">
                         <ul class="pagination justify-content-center">
                             @if ($users->onFirstPage())

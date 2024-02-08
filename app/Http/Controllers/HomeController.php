@@ -26,8 +26,8 @@ class HomeController extends Controller
     {
         try{
             if(Auth::user()){
-                if(Auth::user()->type=='admin'){
-                    return redirect()->route('admin');
+                if(Auth::user()->type=='admin' || Auth::user()->type=='superAdmin'){
+                    return view('admin.dashbord');
                 }else{
                     return view('welcome');
                 }
