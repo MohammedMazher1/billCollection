@@ -47,6 +47,10 @@
                         <i class="fa-solid fa-upload"></i>
                         رفع ملف الدورة
                     </a>
+                    <a href="{{route('accountFiles')}}" class="nav-item nav-link">
+                        <i class="fa-solid fa-upload"></i>
+                          تنزيل كشف الحساب
+                    </a>
                     <a href="#footer" class="nav-item nav-link">
                         <i class="fa fa-phone"></i>
                         تواصل معنا

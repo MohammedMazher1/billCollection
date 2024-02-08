@@ -95,7 +95,11 @@ class FileController extends Controller
 
         $data_array = array_splice($data_array,1);
         array_pop($data_array);
-        return view('files.display', compact('data_array'));
+        $amount = 0;
+        foreach($data_array as $data){
+            $amount += $data[3];
+        }
+        return view('files.display', compact('data_array'))->with('amount' , $amount);
     }
 
     // public function download(File $file){
@@ -115,7 +119,7 @@ class FileController extends Controller
             $file->download_status = 1;
             $file->save();
 
-        }catch(\Exception $e){
+        }catch(Exception $e){
             return redirect()->route('files.index')->with('erroe','لم يتم تنزيل الملف');
         }
 

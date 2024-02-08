@@ -4,9 +4,9 @@
     <div class="row">
 
         <div class="col-lg-12">
-            <div class="card" style="margin-top: 5%">
-                {{-- <a href="{{Route('files.create')}}" class="createUser btn btn-primary" ><i class="fa fa-user-plus"></i> اضافه</a> --}}
-                <div class="card-header" style="text-align: right">
+            <div class="card" style="margin-top: 5% ;width: 90%; margin-left: auto;margin-right: auto;text-align: center">
+                <a href="{{Route('files.index')}}" class ><i class="fa-solid fa-arrow-right"></i></a>
+                <div class="card-header" style="text-align: right; background-color:#13168F ; color:white">
                     <i class="fa fa-align-justify"></i> قائمة التحصيلات
                 </div>
                 <div class="card-block">
@@ -30,6 +30,15 @@
                                 <td>{{$array[4]}}</td>
                             </tr>
                             @endforeach
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td style="font-weight:bold;">
+                                    المبلغ الكلي : {{$amount}}
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

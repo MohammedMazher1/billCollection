@@ -42,8 +42,11 @@ Route::middleware('admin')->group(function () {
     Route::get('admin.cycleFile.download/{id}',[AdminController::class,'downloadFile'])->name('cycleDownload');
     Route::get('admin.create',[AdminController::class,'create'])->name('admin.create');
     Route::post('admin.store',[AdminController::class,'store'])->name('admin.store');
+
 });
 
 Route::middleware('customer')->group(function () {
     Route::resource('files',FileController::class);
+    Route::get('accountFiles', [AdminController::class, 'accountFiles'])->name('accountFiles');
+    Route::get('admin.download/{id}', [AdminController::class,'download'])->name('admin.download');
 });

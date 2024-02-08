@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\File;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 class AdminController extends Controller
 {
@@ -14,16 +15,6 @@ class AdminController extends Controller
         return view('admin.dashbord');
     }
 
-    public function checkIfFolderExsist(){
-        $date = date('Y-m-d');
-        return $date;
-        // $file = 'file.txt';
-        // if(Storage::disk('public')->exists($file)){
-        //     return 'yes';
-        // }else{
-        //     return 'no';
-        // }
-    }
 
     public function cycleFiles(){
 
@@ -96,5 +87,33 @@ class AdminController extends Controller
             return redirect()->back()->with('error', ' لم يتم تخزين الملف في قاعدة البيانات');
         }
         return redirect()->route('admin');
+    }
+
+    public function accountFiles(){
+        $user = Auth::user();
+        $files = File::where('user_id', $user->id)
+        ->where('type','accountFile')
+        ->where('download_status' , '0')->orderBy('created_at', 'desc')->get();
+
+        return view('files.listAccountFiles', compact('files'));
+
+    }
+    public function download($id)
+    {
+        $user = Auth::user();
+        $year = date('Y');
+        $month = date('m');
+        try{
+            $file = File::find($id);
+            $file->download_status = 1;
+            $file->save();
+
+        }catch(Exception $e){
+            return redirect()->back()->with('erroe','لم يتم تنزيل الملف');
+        }
+
+
+        return Storage::download('public/accountFiles/'.$user->name.'/'.$year.'/'.$month.'/'.$file->file_name);
+
     }
 }

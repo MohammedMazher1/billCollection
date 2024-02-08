@@ -4,9 +4,9 @@
     <div class="row">
 
         <div class="col-lg-12">
-            <div class="card" style="margin-top: 5%">
+        <div class="card" style="margin-top: 5% ;width: 90%; margin-left: auto;margin-right: auto;text-align: center">
                 {{-- <a href="{{Route('files.create')}}" class="createUser btn btn-primary" ><i class="fa fa-user-plus"></i> اضافه</a> --}}
-                <div class="card-header" style="text-align: right">
+                <div class="card-header" style="text-align: right; background-color:#13168F ; color:white">
                     <i class="fa fa-align-justify"></i> قائمة التحصيلات
                 </div>
                 <div class="card-block">
@@ -30,7 +30,7 @@
                                 <td>{{$file->user->name}}</td>
                                 <td>{{$file->created_at->format('Y-m-d')}}</td>
                                 <td>
-                                    <a id="refresh" href="{{route('files.edit',$file->id)}}"><i class="fa-solid fa-download"></i></a>
+                                    <a  href="{{route('files.edit',$file->id)}}"><i class="fa-solid fa-download"></i></a>
                                     <span> | </span>
                                     <a  href="{{route('files.show',$file->id)}}"><i  class="fa-solid fa-eye"></i></a>
                                 </td>
