@@ -10,6 +10,11 @@
                     <i class="fa fa-align-justify"></i> قائمة ملفات الدورة
                 </div>
                 <div class="card-block">
+                    @if (Session::get('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{Session::get('error')}}
+                    </div>
+                    @endif
                     <table class="table" width='50%'>
                         <thead>
                             <tr>

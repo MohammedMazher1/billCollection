@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-sm-10 mb-5">
-    <form method="POST"  action="{{Route('collection.store')}}" enctype="multipart/form-data">
+    <form method="POST"  action="{{Route('admin.store')}}" enctype="multipart/form-data">
         @csrf
     <div class="card" style="margin-right: 25%;margin-top: 10%;">
         @if (Session::get('error'))
@@ -10,7 +10,7 @@
                 </div>
          @endif
         <div class="form-group">
-            <label for="file">كشف التحصيلات</label>
+            <label for="file">كشف حساب</label>
             <input type="file" required class="form-control" name="file" id="file">
         </div>
         <div class="form-group">

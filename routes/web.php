@@ -40,6 +40,8 @@ Route::middleware('admin')->group(function () {
     Route::get('admin',[AdminController::class,'index'])->name('admin');
     Route::get('admin.cycleFile',[AdminController::class,'cycleFiles'])->name('admin.cycleFile');
     Route::get('admin.cycleFile.download/{id}',[AdminController::class,'downloadFile'])->name('cycleDownload');
+    Route::get('admin.create',[AdminController::class,'create'])->name('admin.create');
+    Route::post('admin.store',[AdminController::class,'store'])->name('admin.store');
 });
 
 Route::middleware('customer')->group(function () {
