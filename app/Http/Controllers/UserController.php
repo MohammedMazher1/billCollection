@@ -77,26 +77,26 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // try{
-        //     $request->validate([
-        //         "name" => "required|max:255",
-        //         "user_name" => "required",
-        //         "password" => "required",
-        //         'id' => 'required',
-        //         ]);
-        //     }catch(Exception $e){
-        //         return redirect()->back()->with('error','جميع الحقول مطلوبة');
-        //     }
-        //     try{
-        //         $creationData = $request->only(["id","name","user_name","password"]);
-        //         $creationData["password"] = Hash::make($request->password);
-        //         $creationData["type"] = "customer";
-        //          User::create($creationData);
-        //     }catch(Exception $e){
-        //         return redirect()->back()->with('error','حدث خطاء في تخزين البيانات');
-        //     }
+        try{
+            $request->validate([
+                "name" => "required|max:255",
+                "username" => "required",
+                "password" => "required",
+                "type" => "required",
+                'id' => 'required',
+                ]);
+            }catch(Exception $e){
+                return redirect()->back()->with('error','جميع الحقول مطلوبة');
+            }
+            try{
+                $creationData = $request->only(["id","name","username","password" ,"type"]);
+                $creationData["password"] = Hash::make($request->password);
+                 User::updated($creationData);
+            }catch(Exception $e){
+                return redirect()->back()->with('error','حدث خطاء في تخزين البيانات');
+            }
 
-        //      return redirect()->route("users.index");
+             return redirect()->route("users.index");
     }
 
     /**

@@ -29,7 +29,7 @@
 
                 <div class="form-group col-sm-6" style="padding: 0">
                     <label for="city">اسم المستخدم</label>
-                    <input type="text" class="form-control" value="{{$user['user_name']}}" required name="user_name" id="city" placeholder="Mo123">
+                    <input type="text" class="form-control" value="{{$user['username']}}" required name="username" id="city" placeholder="Mo123">
                 </div>
 
                 <div class="form-group col-sm-5" style="padding: 0 ;">
@@ -39,6 +39,21 @@
                 </div>
             <!--/row-->
 
+            </div>
+            <div class="row">
+                    <div class="form-group col-md-5" style="margin: 0;">
+                        <label for="postal-code">نوع المستخدم</label>
+                        <select name="type" class="form-control">
+                            @if ($user->type == 'admin')
+                            <option value="admin" selected>مدير نظام</option>
+                            <option value="customer">فرع</option>
+                            @else
+                            <option value="customer" selected>فرع</option>
+                            <option value="admin">مدير نظام</option>
+                            @endif
+                        </select>
+                        <div class="select-dropdown"></div>
+                    </div>
             </div>
             <div class="row" style="margin: 0">
                <div class="card-footer" style="text-align: left; padding-left:0">
