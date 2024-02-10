@@ -24,7 +24,7 @@
         <div class="container-flHuid d-flex justify-center">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
             <a class="navbar-brand" href="{{Route('admin')}}" style="background-color:#fff">
-                <img  src="{{asset('assets/img/logo2.png')}}" alt="logo">
+                <img  src="{{asset('assets/img/logo.png')}}" alt="logo">
             </a>
             {{-- <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item p-x-1">

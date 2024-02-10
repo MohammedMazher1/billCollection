@@ -3,10 +3,10 @@
 <main class="mainContent">
     <div class="bankText">
         <p>
-            بنك بن دول للتمويل الأصغر الأسلامي
+            شركة بن دول للصرافة
         </p>
         <p>
-            Bin Dowal Islamic Microfinance Bank
+            Bin Dowal Exchange Co.
         </p>
     </div>
     <a href="{{ Route('login') }}">

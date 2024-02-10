@@ -63,9 +63,6 @@
                         <a href="{{ Route('admin') }}" class="btn btn-primary px-5 ml-2 ">الإدارة</a>
                     @endif
                     <div class="mx-3 text-primary">
-                        @isset($user)
-
-                 @endisset
                         <i class="fa fa-user"></i>
                         <span>{{ Auth::user()->name }}</span>
                     </div>

@@ -7822,7 +7822,6 @@ base-chart.chart {
 
 .signInUser{
     display:flex;
-    gap:5px ;
     color:#fff ;
     justify-content:flex-end;
     margin-left:50px;

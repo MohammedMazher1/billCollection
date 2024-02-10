@@ -28,7 +28,7 @@
         <div class="container-flHuid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
             <a class="navbar-brand" href="#" style="background-color: #fff ;width:200px">
-                <img class="" src="{{asset('assets/img/logo2.png')}}" alt="logo">
+                <img class="" src="{{asset('assets/img/logo.png')}}" alt="logo">
             </a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
