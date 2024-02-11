@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('/dashbord.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

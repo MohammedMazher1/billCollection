@@ -1,7 +1,7 @@
     @extends('layouts.admin')
     @section('content')
     <div class="col-sm-10 mb-5">
-        <form method="POST"  action="{{Route('users.update')}}">
+        <form method="POST"  action="{{Route('users.store')}}">
             @csrf
         <div class="card" style="margin-right: 25%;margin-top: 10%;">
             <div class="card-header">
@@ -26,13 +26,13 @@
                 <div class="row" style="margin: 0; display:flex ; justify-content:space-between">
 
                     <div class="form-group col-sm-6" style="padding: 0">
-                        <label for="city">اسم المستخدم</label>
-                        <input type="text" class="form-control" required name="username" id="city" placeholder="Mo123">
+                        <label for="username">اسم المستخدم</label>
+                        <input type="text" class="form-control"  name="username" id="username" placeholder="Mo123">
                     </div>
 
                     <div class="form-group col-sm-5" style="padding: 0 ;">
-                        <label for="city">كلمة المرور</label>
-                        <input type="password" class="form-control" required name="password" id="city" placeholder="******">
+                        <label for="username">كلمة المرور</label>
+                        <input type="password" class="form-control" required name="password" id="password" placeholder="******">
 
                     </div>
                 <!--/row-->
