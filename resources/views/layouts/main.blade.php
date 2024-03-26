@@ -34,7 +34,6 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between small" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
-
                     <a href="/" class="nav-item nav-link active">
                         <i class="fa fa-home"></i>
                         الرئسية

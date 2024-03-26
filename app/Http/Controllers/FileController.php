@@ -23,6 +23,12 @@ class FileController extends Controller
         ->where('download_status' , '0')->orderBy('created_at', 'desc')->paginate(4);
         return view('files.index', compact('files'));
     }
+    public function allFiles(){
+        $user = Auth::user();
+        $files = File::where('user_id', $user->id)
+        ->where('type','collection')->orderBy('created_at', 'desc')->paginate(4);
+        return view('files.allFiles', compact('files'));
+    }
 
     /**
      * Show the form for creating a new resource.

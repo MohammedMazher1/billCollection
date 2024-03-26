@@ -49,6 +49,7 @@ Route::resource('collection',CollectionController::class);
 
 Route::middleware('customer')->group(function () {
     Route::resource('files',FileController::class);
+    Route::get('allFiles',[FileController::class,'allFiles'])->name('allFiles');
     Route::get('accountFiles', [AdminController::class, 'accountFiles'])->name('accountFiles');
     Route::get('admin.download/{id}', [AdminController::class,'download'])->name('admin.download');
 });

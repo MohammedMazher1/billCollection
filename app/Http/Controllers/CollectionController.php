@@ -51,7 +51,7 @@ class CollectionController extends Controller
         try{
             $file = $request->file('file');
             $date = date('Y-m-d');
-            $fileName = date('Y-m-d' , strtotime($date . '-1 day'));
+            $fileName =$request->file('file')->getClientOriginalName();
             if(Storage::exists('public/collections/'.$user->name.'/'.$year.'/'.$month.'/'.$fileName.'.txt')){
                 return redirect()->back()->with('error', 'الملف موجود مسبقا');
             }

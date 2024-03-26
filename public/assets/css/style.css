@@ -10135,3 +10135,11 @@ ul.options-list li:hover > .fa-xmark{
     border: none;
     font-size: 16px;
 }
+.allFiles i{
+    color: white;
+    transition: all 0.5s ease;
+    font-size: 18px;
+  }
+  .allFiles i:hover{
+    color: #000;
+  }
